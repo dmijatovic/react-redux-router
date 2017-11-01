@@ -1,6 +1,6 @@
-# React test project
+# React-redux-router4 test project
 
-This project is created using create-react-app cli. After creating it **npm eject** is runned to extract definitions and node scripts from cli. Then support for scss files is added to webpack definitions.
+This project is created using create-react-app cli. After creating it **npm eject** is runned to extract definitions and node scripts from cli. Then support for scss files is added to webpack definitions. After that I added router v4 and redux.
 
 ## Folder structure
 
@@ -33,3 +33,7 @@ It runs build.js node script. To serve build project you can use serve command (
 ```cmd
 serve -s build
 ```
+
+## React-router-dom v4
+
+This project is used to learn react-router v4. It seems this version takes new approach favouring dynamic routing. More info is avaliable on the [website](https://reacttraining.com/react-router/web/example/basic).

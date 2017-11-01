@@ -1,0 +1,30 @@
+
+@import '../layout/variables';
+
+
+
+
+.tab-nav{
+  border-bottom: 1px solid $app-light-grey;
+  padding: $step_1 0px;
+  
+  a{
+    text-decoration: none;
+    padding: $asimetric_1;
+  }
+
+  a:focus{
+    outline:none;
+    background-color: $app-light-grey;
+  }
+
+  a.active{
+    font-weight:600;
+    color: $app-blue-contrast;
+    background-color: $app-blue;
+    border-radius: 7px 0px 0px;
+    overflow: hidden;
+    //border-bottom: 2px solid $app-orange;    
+  }
+  
+}

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from './logo.svg';
 
 import './layout.scss';
+
+import { mainMenu } from '../data/menu.data';
+
 
 export class AppHead extends Component {     
   componentWillMount(){
@@ -22,10 +26,17 @@ export class AppHead extends Component {
           <img src={logo} className="app-logo" alt="logo" />
           <h1 className="app-title">{this.state.welcome}</h1>
         </div>
-        <div className="right-size">
+        
+        <div className="main-nav-group">
           
-            <i className="material-icons btn"
-              onClick={this.homeClick}>home</i>
+          {mainMenu.map(item =>(
+            <NavLink key={item.path} to={item.path}
+              activeClassName={item.activeClass} >
+              <i className="material-icons btn"
+                title={item.title}>{item.matIcon}
+              </i>
+            </NavLink>
+          ))}            
             
         </div>
       </header>      

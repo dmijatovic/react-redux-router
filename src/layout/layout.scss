@@ -10,9 +10,9 @@
 .app-header {
   display:flex;
   width:100vw;  
-  background-color: #222;  
+  background-color: $app-blue;
   padding: $header-padding;
-  color: white;
+  color: $app-white;
   box-sizing: border-box;
   align-items: center;
 
@@ -33,16 +33,44 @@
   padding: $content-padding;
   font-size: 0.8em;
   font-weight: 400;
-  color: white;
+  color: $app-white;
   box-sizing: border-box;
   align-items: center;
 
 }
 
-/*
-.app-intro {
-  font-size: large;
-}*/
+.main-nav-group{
+  display:flex;
+
+  a{
+    color: $app-blue-contrast;
+    text-decoration: none;   
+    padding: $step_1;
+    margin: 0px 3px;
+    border:1px solid $app-blue-contrast;
+    border-radius: 50%;
+    width: $step_4;
+    text-align: center;
+  }
+
+  a:visited{
+    color:inherit;
+  }
+
+  a:hover{
+    color: $app-white;    
+  }
+
+  a.active{      
+    color: $app-blue;
+    background-color: $app-blue-contrast;
+    //color: $app-white;
+    //background-color: $app-blue;
+    //border-radius: 7px 0px 0px;
+    //overflow: hidden;
+    //border-bottom: 2px solid $app-orange;    
+  }
+}
 
 .material-icons.btn{  
   font-size: 2em;  

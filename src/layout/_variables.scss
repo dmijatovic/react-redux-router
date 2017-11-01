@@ -32,7 +32,9 @@ $app-dark-grey-contrast: mat-contrast($mat-grey,800);
 $app-white: mat-color($mat-grey,100);
 $app-white-contrast:mat-contrast($mat-grey,100);
 
-//$app-orange:
+$app-orange:mat-color($mat-deep-orange,500);
+$app-orange-contrast:mat-contrast($mat-deep-orange,500);
+
 $app-green:mat-color($mat-teal,500);
 $app-green-contrast:mat-constrast($mat-teal,500);
 $app-red:mat-color($mat-red,500);
@@ -56,6 +58,12 @@ PAGE LAYOUT PADDING
 $page-padding: 0px 27px;
 $header-padding: 18px; 
 $content-padding: 18px; 
+$asimetric_1: 9px 27px;
+$step_1:9px;
+$step_2:18px;
+$step_3:27px;
+$step_4:36px;
+$step_5:45px;
 
 
 
