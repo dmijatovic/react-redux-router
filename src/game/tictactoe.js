@@ -29,7 +29,7 @@ const PageTitle = ({value}) =>(
 /**
  * Tic tac toe game component 
  */
-class TicTacToe extends React.Component{
+export class TicTacToe extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -151,16 +151,7 @@ class TicTacToe extends React.Component{
 
   }
 
-  playerTurn(xTurn){
-    let player=this.state.xSign;
-    if (xTurn!==true){
-      player=this.state.oSign
-    }
-    return(
-      `Player ${player} turn`
-    )
-  }
-
+  
   render(){    
     console.log("TicTacToe...state...",this.state);
     //you can use local functions 
