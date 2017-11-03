@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import { AppHead, AppFooter } from './layout';
+import { AppHead, AppFooter } from './layout/page';
 //import { HomePage } from './page/home';
 
-import { HomePage } from './router/level1';
-import { UserPage } from './user/index';
+//create router
+import { mainMenu } from './data/menu.data';
 
+//import { ErrMsg, Err404Page } from './system/messages';
 
 import './App.scss';
 class App extends Component {
@@ -20,10 +21,17 @@ class App extends Component {
           <AppHead />      
           
           <section className="app-body">
-            <Switch>     
-              <Redirect exact from="/" to="/router"/>         
-              <Route path="/router" component={HomePage}/>
-              <Route path="/user" component={UserPage}/>                  
+            <p>
+              This is static part of the page. Main menu and 
+              routes are dynamically loaded from ./data/menu.data.js
+            </p>            
+            <Switch>                   
+              <Redirect exact from="/" to={mainMenu.default}/>         
+              
+              {mainMenu.items.map((prop,i)=>{
+                return <Route key={i} {...prop}/>
+              })}      
+              
             </Switch>
           </section>
           

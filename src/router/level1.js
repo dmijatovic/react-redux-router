@@ -18,7 +18,7 @@ export class HomePage extends Component {
             <span><NavLink to="/router/child4" activeClassName="active">Child 4</NavLink></span>
           </nav>
           <section>
-            <p>Home page with following functionalities:
+            <p>Home page has it's own child routes with the following functionalities:
               <li>redirect from root to home/child1. It needs Switch statement when only one component need to be rendered</li>
               <li>NavLink enables adding of active class to active link</li>
               <li>Parameter passing to level2 component using /:id. Note! you can pass more values than linked. You need to handle 404 in the code.</li>

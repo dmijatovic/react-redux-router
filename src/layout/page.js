@@ -29,7 +29,9 @@ export class AppHead extends Component {
         
         <div className="main-nav-group">
           
-          {mainMenu.map(item =>(
+          {mainMenu.items
+            .filter(i => i.path!=null)
+            .map(item =>(
             <NavLink key={item.path} to={item.path}
               activeClassName={item.activeClass} >
               <i className="material-icons btn"

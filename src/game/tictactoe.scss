@@ -1,0 +1,25 @@
+
+@import '../layout/variables';
+
+
+
+.game{
+  display:flex;
+
+  .info, .board, .commands{
+    padding: $step_3; 
+  }
+}
+
+
+
+.tictac-item{
+  width: 4vw;
+  height: 4vh;
+  border: none;
+  cursor: pointer;
+}
+
+.tictac-item:focus{
+  outline: none;
+}

@@ -1,8 +1,25 @@
 
+//import React, { Component } from 'react';
 
-export const mainMenu=[  
+//standard pages
+import { HomePage } from '../router/level1';
+import { UserPage } from '../user/index';
 
-  {path:'/user', matIcon:'person', activeClass:'active', title:'User'},
-  {path:'/router/child1', matIcon:'home', activeClass:'active', title:'Home'}
+import { GamePage } from '../game/tictactoe';
 
-]
+//error page
+import { Err404Page } from '../system/messages';
+
+export const mainMenu={
+  default:'/router/child1',
+  items:[  
+    {path:'/tictac', matIcon:'games', activeClass:'active', 
+      title:'Game', component:GamePage },
+      
+    {path:'/user', matIcon:'person', activeClass:'active', 
+      title:'User', component:UserPage },
+    {path:'/router/child1', matIcon:'home', activeClass:'active', 
+      title:'Home', component:HomePage},    
+    {path:null, component:Err404Page},
+  ]
+}
