@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-export class UserPage extends Component {
+export class UserPage extends React.Component {
 
   render() {
     return (

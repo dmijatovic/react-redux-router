@@ -40,3 +40,29 @@ const errTemplate = ({errNo=500,history,location}) => (
     <h1>Error message {this.props.errNo}</h1>
   </div>  
 )*/
+
+export class Loader extends React.Component{
+  componentWillMount(){
+    console.log("Loader...willMount...props", this.props);
+  }
+  componentWilReceiveProps(nextProps){
+    console.log("Loader...receivesProps...", this.props);
+  }
+  render(){
+
+    const {children} = this.props;
+    let loading=false;
+
+    if (loading===true){
+      return(
+        <h1>Loading...</h1>
+      )
+    }else{
+      return(
+        <section>
+          {children}
+        </section>
+      )
+    }
+  }
+}

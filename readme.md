@@ -37,3 +37,21 @@ serve -s build
 ## React-router-dom v4
 
 This project is used to learn react-router v4. It seems this version takes new approach favouring dynamic routing. More info is avaliable on the [website](https://reacttraining.com/react-router/web/example/basic).
+We need to investigate lazy loading features with react router.
+
+## Material-UI v1 (beta 19)
+This project is used to learn material-ui components, new version, v1. The code is in the branch **material**.
+For more info use [guide](https://material-ui-next.com/). Getting started steps:
+- install material-ui: `npm install material-ui@next` 
+- install material-icons: see index.scss for implementation. Basicaly, we load material-icons fonts and basic styles from google cdn.
+- install svg material icons: `npm install material-ui-icons`. The difference between icon fonts and svg icons needs to be further investigated. At first it seems both have same conent but in different form (font vs. svg)
+
+### Customizing material themes
+It is possible to customize default theme using theme object and also to apply theme to custom components using withTheme functionality. I like the idea, let's see how it works in practice!
+
+More info on [website] (https://material-ui-next.com/customization/api/)
+Theme variables are [here] (https://material-ui-next.com/customization/themes/#configuration-variables)
+
+## Redux
+In this project we also test redux. One test is in **game**. Redux is integrated at the top component and should pass the store as prop to top component. The components should also be listening
+
