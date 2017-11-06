@@ -33,6 +33,12 @@ It runs build.js node script. To serve build project you can use serve command (
 serve -s build
 ```
 
+## Lazy loading
+
+Lazy loading in react projects is possible using Webpack support of import() function. However I have not managed to combine it with react-router at this point. Router supports component or render function. Advised approach on react-router website for v4 can be seen (here)[https://reacttraining.com/react-router/web/guides/code-splitting].
+I am still not convinced that this is easy to do. Let's say that Angular lazy loading of modules is easier to achieve, at least for now.
+
+
 ## React-router-dom v4
 
 This project is used to learn react-router v4. It seems this version takes new approach favouring dynamic routing. More info is avaliable on the [website](https://reacttraining.com/react-router/web/example/basic).
@@ -67,8 +73,5 @@ Theme variables are [here](https://material-ui-next.com/customization/themes/#co
 
 ## Redux
 
-In this project we also test redux. One test is in **game**. Redux is integrated at the top component and should pass the store as prop to top component. The components should also be listening?!? First version of TicTacToe game is done without redux and second version is with redux.
+In this project we also test redux. One test is in **game**. Redux is integrated at the top component and passes the store as prop to top component. The components should also be listening?!? Note that first version of TicTacToe game is without redux and second version (/tictact2) is with redux. Advised implemenations use addional libs to integrate redux with react components. Function mapStateToProps is usually used for this task. [Here is good explanation](https://www.youtube.com/watch?v=IIMUXbkKzW0&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a&index=7).
 
-## Lazy loading
-
-Lazy loading in react projects is possible using Webpack support

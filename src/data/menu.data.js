@@ -17,17 +17,20 @@ import { Err404Page } from '../system/messages';
 
 export const mainMenu={
   default:'/matuitest',
-  items:[ 
+  loginUrl:'/login',
+  items:[
+    {path:'/redux', matIcon:'person', activeClass:'active', 
+      title:'Redux', component: LoginForm }, 
     {path:'/login', matIcon:'person', activeClass:'active', 
       title:'Sign in', component: LoginForm },
     {path:'/register', matIcon:'person', activeClass:'active', 
-      title:'Sign in', component: RegisterForm },
+      title:'Register', component: RegisterForm },
     {path:'/matuitest', matIcon:'games', activeClass:'active', 
-    title:'Game', component: MatUiTest },
+      title:'Materual UI', component: MatUiTest },
     {path:'/tictac2', matIcon:'games', activeClass:'active', 
-    title:'Game', component:TicTacRedux },
+      title:'TicTac2', component:TicTacRedux },
     {path:'/tictac', matIcon:'games', activeClass:'active', 
-      title:'Game', component:GamePage },      
+      title:'TicTac1', component:GamePage },      
     {path:'/user', matIcon:'person', activeClass:'active', 
       title:'User', component:UserPage },
     {path:'/router/child1', matIcon:'home', activeClass:'active', 

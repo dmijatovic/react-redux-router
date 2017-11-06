@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { Paper, TextField, Button } from 'material-ui';
+import { TextField, Button } from 'material-ui';
 
 
 export class LoginForm extends React.Component {

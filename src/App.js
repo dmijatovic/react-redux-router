@@ -16,14 +16,15 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Loader>
+        <Loader>          
           <Switch>                   
             <Redirect exact from="/" to={mainMenu.default}/>         
             {mainMenu.items.map((prop,i)=>{
               return <Route key={i} {...prop}/>
             })}         
           </Switch>
-        </Loader>           
+        </Loader>
+
       </BrowserRouter>
     );
   }
