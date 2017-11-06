@@ -37,6 +37,10 @@ serve -s build
 
 This project is used to learn react-router v4. It seems this version takes new approach favouring dynamic routing. More info is avaliable on the [website](https://reacttraining.com/react-router/web/example/basic).
 
+### Loader
+
+The loader component is placed in App.js and wraps all other components. This is main page loader that could work using loading flag. There should be some experimentation to connect this loader with redux store.
+
 ### Authentication
 
 The authentication is done using component that wraps routes component. The example is avaliable in router/level1.js (/router)
@@ -45,6 +49,26 @@ The authentication is done using component that wraps routes component. The exam
 
 The router playes well with dynamic routes. The routes are stored in data/menu.data.js. In App.js we place main router component (BrowserRouter) then we add Switch component we want to display only one route entry (first that matches), and at last we loop our route data and place Route component for each route.
 
+## Material-UI v1 (beta 19)
+
+This project is used to learn material-ui components, new version, v1. The code is in the branch **material**.
+For more info use [guide](https://material-ui-next.com/). Getting started steps:
+
+- install material-ui: `npm install material-ui@next` 
+- install material-icons: see index.scss for implementation. Basicaly, we load material-icons fonts and basic styles from google cdn.
+- install svg material icons: `npm install material-ui-icons`. The difference between icon fonts and svg icons needs to be further investigated. At first it seems both have same conent but in different form (font vs. svg)
+
+### Customizing material themes
+
+It is possible to customize default theme using theme object and also to apply theme to custom components using withTheme functionality. I like the idea, let's see how it works in practice!
+
+More info on [website](https://material-ui-next.com/customization/api/)
+Theme variables are [here](https://material-ui-next.com/customization/themes/#configuration-variables)
+
 ## Redux
 
-Basic example is avalible in game folder. First version of TicTacToe game is done without redux and second version is with redux.
+In this project we also test redux. One test is in **game**. Redux is integrated at the top component and should pass the store as prop to top component. The components should also be listening?!? First version of TicTacToe game is done without redux and second version is with redux.
+
+## Lazy loading
+
+Lazy loading in react projects is possible using Webpack support
