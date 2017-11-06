@@ -22,18 +22,46 @@ export class HomePage extends Component {
               <li>redirect from root to home/child1. It needs Switch statement when only one component need to be rendered</li>
               <li>NavLink enables adding of active class to active link</li>
               <li>Parameter passing to level2 component using /:id. Note! you can pass more values than linked. You need to handle 404 in the code.</li>
+              <li>Authentication performed based on random number, user id less than 50 has access to page</li>
             </p>
           </section>
           <section className="tab-content">            
             <Switch>
               <Redirect exact from="/router" to="/router/child1"/>
-              <Route path="/router/:id" component = {HomeLevel2} />              
+              <AuthenticateUser>
+                <Route path="/router/:id" component = {HomeLevel2} />              
+              </AuthenticateUser>
             </Switch>
           </section>
         </section>
       </BrowserRouter>
     );
   }
+}
+
+/**
+ * This component wraps the routes that need to be 
+ * authenticated. In this example we use random 
+ * number to determine if user is authenticated 
+ * in real life we will use service or jwt eg.
+ * The component receives child routes through 
+ * props. In this example we have only one
+ */
+class AuthenticateUser extends React.Component{    
+  render(){    
+    let { children } = this.props,
+        user = Math.round(Math.random()*100);
+    
+    console.log("AuthenticateUser...", user);
+  
+    const accessDenied = (      
+      <div>
+        <h1>Access denied to user {user}</h1>
+      </div>
+    )   
+    //random user >= 50 get accessDenied message
+    return ( user < 50 ? children : accessDenied )
+  }  
 }
 
 const HomeLevel2 = ({match}) => (

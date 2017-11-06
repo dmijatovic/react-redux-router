@@ -15,7 +15,6 @@ This project is created using create-react-app cli. After creating it **npm ejec
 
 Environment variables are supported in build script by using .env file(s) **in the root of the project**. In this test I disabled source maps in production environment. For more information see ./config/env.js file and references to github pages. In addition there is more info at [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env).
 
-
 ## Development
 
 ```cmd
@@ -37,3 +36,15 @@ serve -s build
 ## React-router-dom v4
 
 This project is used to learn react-router v4. It seems this version takes new approach favouring dynamic routing. More info is avaliable on the [website](https://reacttraining.com/react-router/web/example/basic).
+
+### Authentication
+
+The authentication is done using component that wraps routes component. The example is avaliable in router/level1.js (/router)
+
+### Dynamic routes definitions
+
+The router playes well with dynamic routes. The routes are stored in data/menu.data.js. In App.js we place main router component (BrowserRouter) then we add Switch component we want to display only one route entry (first that matches), and at last we loop our route data and place Route component for each route.
+
+## Redux
+
+Basic example is avalible in game folder. First version of TicTacToe game is done without redux and second version is with redux.

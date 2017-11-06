@@ -29,7 +29,7 @@ export const TicTacRedux = () => {
    */
   return(
     <div>
-      <h1>It works</h1>
+      <h1>Redux TicTacToe</h1>
       <TicTacToe {...data}/>
     </div>
   )  
