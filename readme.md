@@ -38,7 +38,6 @@ serve -s build
 Lazy loading in react projects is possible using Webpack support of import() function. However I have not managed to combine it with react-router at this point. Router supports component or render function. Advised approach on react-router website for v4 can be seen (here)[https://reacttraining.com/react-router/web/guides/code-splitting].
 I am still not convinced that this is easy to do. Let's say that Angular lazy loading of modules is easier to achieve, at least for now.
 
-
 ## React-router-dom v4
 
 This project is used to learn react-router v4. It seems this version takes new approach favouring dynamic routing. More info is avaliable on the [website](https://reacttraining.com/react-router/web/example/basic).
@@ -71,7 +70,14 @@ It is possible to customize default theme using theme object and also to apply t
 More info on [website](https://material-ui-next.com/customization/api/)
 Theme variables are [here](https://material-ui-next.com/customization/themes/#configuration-variables)
 
+### Integration with react-router
+
+For menu optoins to proper way of intergrating router and material-ui still need to be discovered. 
+
 ## Redux
 
-In this project we also test redux. One test is in **game**. Redux is integrated at the top component and passes the store as prop to top component. The components should also be listening?!? Note that first version of TicTacToe game is without redux and second version (/tictact2) is with redux. Advised implemenations use addional libs to integrate redux with react components. Function mapStateToProps is usually used for this task. [Here is good explanation](https://www.youtube.com/watch?v=IIMUXbkKzW0&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a&index=7).
+In this project we also test redux. One test is in **game**. Redux is integrated at the top component and passes the store as prop to top component. The components should also be listening?!? Note that first version of TicTacToe game is without redux and second version (/tictact2) is with redux. Advised implemenations use addional lib react-redux to integrate redux with react components. Function mapStateToProps is usually used for this task. [Here is good explanation](https://www.youtube.com/watch?v=IIMUXbkKzW0&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a&index=7).
 
+## Redux Form
+
+This lib makes it possible to create dynamic (reactive) forms. I expect to be similar to Angular dynamic form features (we recently tested). The lib requires react-redux module too.

@@ -7,13 +7,13 @@ import React from 'react';
 //Material UI
 import {
   AppBar, Toolbar, Typography, Button, IconButton,
-  Menu, MenuItem
+  Menu, MenuItem, ListItem
 } from 'material-ui';
 import MenuIcon from 'material-ui-icons/Menu';
 import MoreVert from 'material-ui-icons/MoreVert';
 
 //router
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { mainMenu } from '../data/menu.data';
 
 //custom styles
@@ -21,14 +21,13 @@ import './AppUi.scss';
 
 export const AppHead1 = (props) => {
   //const { classes } = props;
-  console.log("AppHead...props:",props);
+  //console.log("AppHead...props:",props);
   
   const sendToLogin=()=>{
     window.location = mainMenu.loginUrl;
   }
   
-  return (
-    
+  return (    
     <AppBar position="static">
       <Toolbar>
         <IconButton color="contrast" aria-label="Menu">
@@ -38,8 +37,7 @@ export const AppHead1 = (props) => {
         <Typography type="title" color="inherit" className="app-title">
           {props.pageTitle}
         </Typography>
-        
-        
+                
         
         <Button color="contrast"
           onClick={sendToLogin}>          
@@ -49,16 +47,35 @@ export const AppHead1 = (props) => {
         <IconMainMenu />
 
       </Toolbar>
-    </AppBar>
-    
+    </AppBar>    
   )
 }
 
 
 export class IconMainMenu extends React.Component{
-  state={
-    anchorEl:null,
-    open:false
+  constructor(props){
+    super(props)
+    
+    this.state={
+      anchorEl:null,
+      open:false,
+      item:this.getDefaultMenuItem()
+    }
+  }
+
+  getDefaultMenuItem(){
+    //debugger
+    for (let i in mainMenu.items){
+      let item = mainMenu.items[i];
+      if (item.path === mainMenu.default){
+        return parseInt(i);
+      }
+    }    
+    //if we are here there is no default
+    //material-ui uses 0 as default to set to 
+    //first item
+    //debugger
+    return 0;
   }
 
   handleClick = (event) =>{
@@ -69,31 +86,43 @@ export class IconMainMenu extends React.Component{
     });
   }
 
-  handleRequestClose = () =>{
-    this.setState({open:false})
-  }
-
-  menuItems=()=>{
-    //console.log(mainMenu)
-    mainMenu.items
-      .filter(i=>i.path!=null)
-      .map((item,index)=>{
-        console.log(item.path, item.title);
-        return(          
-          <MenuItem
-            //key={item.path}
-            //selected={item.path === this.state.selected } 
-            onClick={this.handleRequestClose}>
-            {item.title}
-          </MenuItem>
-        )
+  handleRequestClose = (event,index) =>{
+    this.setState({
+      open:false,
+      item:index   
     })
+    if (index){
+      //console.log("navigate...", mainMenu.items[index].path);
+      //window.location=mainMenu.items[index].path;
+    }
+  }  
+
+  menuItems = () =>{
+    
+    //it needs to return complete function!        
+    //console.log("store", selItem);
+    return (
+      mainMenu.items
+      .filter(i=>i.path!=null)
+      .map((i,index)=>{                
+        //console.log(i)        
+        return(                
+          <MenuItem          
+            key={index}          
+            selected={index===this.state.item}
+            onClick={event => this.handleRequestClose(event,index)}>
+
+            <Link key={index} to={i.path}>
+              {i.title}
+            </Link>
+
+          </MenuItem>                
+        )
+      })
+    )
   }
   render(){
-    //const open = Boolean (this.state.anchorEl);
-    //const menuItems = () => {
-     
-    //}
+    //console.log(this.state);
     return(
       <div>
         <IconButton
@@ -103,27 +132,15 @@ export class IconMainMenu extends React.Component{
           onClick={this.handleClick}>
           <MoreVert/>
         </IconButton>
+
         <Menu
           id="app-main-menu"
           anchorEl={this.state.anchorEl}
           open={this.state.open}
           onRequestClose={this.handleRequestClose}>
 
-          {mainMenu.items
-            .filter(i=>i.path!=null)
-            .map((i,index)=>{
-              console.log(i.path);
-              return(
-                <MenuItem
-                  key={index} 
-                  onClick={this.handleRequestClose}>
-                  
-                  <NavLink to={i.path} >{i.title} </NavLink>
+          {this.menuItems()}
 
-                </MenuItem>
-              )
-            })
-          }
         </Menu>
       </div>
     )
