@@ -1,0 +1,16 @@
+
+@import 'variables';
+
+.main-outlet {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+
+  .app-body{
+    flex:1;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: $page-padding;
+  }
+}

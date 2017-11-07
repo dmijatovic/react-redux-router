@@ -13,6 +13,5 @@
     box-sizing: border-box;
     padding: $page-padding;
   }
-
 }
  
